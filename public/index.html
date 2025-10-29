@@ -1,0 +1,181 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz App - Home</title>
+  <style>
+   /* === General Layout === */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #a8edea, #fed6e3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #333;
+}
+
+/* === Main Container === */
+.container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 40px;
+  width: 90%;
+  max-width: 500px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* === Headings === */
+h1, h2, h3 {
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* === Input Fields === */
+input {
+  width: 80%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+input:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 8px rgba(106, 17, 203, 0.2);
+}
+
+/* === Buttons (Login, Topic, Next, etc.) === */
+button {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #2575fc, #6a11cb);
+  box-shadow: 0 4px 15px rgba(106, 17, 203, 0.3);
+  transform: scale(1.05);
+}
+
+/* === Topic Buttons Layout === */
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* === Quiz Options === */
+#options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.option {
+  width: 80%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 2px solid #6a11cb;
+  color: #6a11cb;
+  background: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.option:hover {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* === Selected Option === */
+.option.selected {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(106, 17, 203, 0.4);
+}
+
+/* === Score Section === */
+#score {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* === Attempts List === */
+#attempts {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+#attempts li {
+  background: rgba(106, 17, 203, 0.1);
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* === Responsive Design === */
+@media (max-width: 600px) {
+  .container {
+    padding: 25px;
+  }
+
+  input, button, .option {
+    width: 100%;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to the Quiz App</h1>
+
+    <div id="auth-section">
+      <h2>Login / Register</h2>
+      <input type="text" id="username" placeholder="Username" />
+      <input type="password" id="password" placeholder="Password" />
+      <button id="loginBtn">Login / Register</button>
+    </div>
+
+    <div id="topic-section" style="display:none;">
+      <h2>Select a Topic</h2>
+      <div class="topics">
+        <button class="topic" data-topic="Science">Science</button>
+        <button class="topic" data-topic="Math">Math</button>
+        <button class="topic" data-topic="History">History</button>
+        <button class="topic" data-topic="Sports">Sports</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

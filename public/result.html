@@ -1,0 +1,103 @@
+<!-- public/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Result</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+body {
+  font-family: 'Comic Neue', cursive;
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: rgba(255,255,255,0.95);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  max-width: 500px;
+  text-align: center;
+}
+
+h1 {
+  color: #ff6f61;
+  text-shadow: 2px 2px #ffe6e1;
+}
+
+#score {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff8c42;
+  margin: 20px 0;
+}
+
+#attempts {
+  list-style: none;
+  padding: 0;
+}
+
+#attempts li {
+  background-color: #ffe066;
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+button {
+  background-color: #ff6f61;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #ff8c42;
+  transform: translateY(-3px);
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Your Result</h1>
+    <p id="score"></p>
+    <h3>Previous Attempts:</h3>
+    <ul id="attempts"></ul>
+    <button onclick="window.location.href='index.html'">Play Again</button>
+  </div>
+
+
+  <script>
+  // Generate random number between 6 and 10 (inclusive)
+  const minScore = 6;
+  const maxScore = 10;
+  const randomScore = Math.floor(Math.random() * (maxScore - minScore + 1)) + minScore;
+
+  // Display the score
+  document.getElementById('score').textContent = `Your Score: ${randomScore}`;
+
+  // Optional: Generate some dummy previous attempts
+  const attemptsList = document.getElementById('attempts');
+  const numAttempts = Math.floor(Math.random() * 3) + 1; // 1 to 5 previous attempts
+  for (let i = 1; i <= numAttempts; i++) {
+    const li = document.createElement('li');
+    const attemptScore = Math.floor(Math.random() * (maxScore - minScore + 1)) + minScore;
+    li.textContent = `Attempt ${i}: ${attemptScore} points`;
+    attemptsList.appendChild(li);
+  }
+</script>
+
+</body>
+</html>

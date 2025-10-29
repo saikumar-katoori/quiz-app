@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+body {
+  font-family: 'Comic Neue', cursive;
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: rgba(255,255,255,0.9);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  max-width: 500px;
+  text-align: center;
+}
+
+h1 {
+  color: #ff6f61;
+  text-shadow: 2px 2px #ffe6e1;
+}
+
+input[type="text"], input[type="password"] {
+  width: 80%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 12px;
+  border: 2px solid #ff8c42;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #ff6f61;
+  box-shadow: 0 0 10px rgba(255,111,97,0.5);
+}
+
+button {
+  background-color: #ff6f61;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 15px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #ff8c42;
+  transform: translateY(-3px);
+}
+
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.topic {
+  background-color: #ffcc70;
+  color: #333;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.topic:hover {
+  background-color: #ffab76;
+  transform: scale(1.1);
+}

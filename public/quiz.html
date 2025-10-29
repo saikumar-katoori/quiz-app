@@ -1,0 +1,160 @@
+<!-- public/quiz.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #a8edea, #fed6e3);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 600px;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+h1 {
+  color: #ff6f61;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+h2 {
+  color: #ff8c42;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* ===== Input Fields ===== */
+input {
+  width: 80%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #ffd580;
+  margin: 10px 0;
+  font-size: 1rem;
+  text-align: center;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #ff8c42;
+  box-shadow: 0 0 8px rgba(255, 140, 66, 0.4);
+}
+
+/* ===== General Buttons ===== */
+button {
+  background: linear-gradient(135deg, #ffaf40, #ff6f61);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 25px;
+  margin: 10px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(255, 111, 97, 0.25);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(255, 111, 97, 0.35);
+}
+
+/* ===== Topic & Option Buttons ===== */
+.topic, .option-btn {
+  display: block;
+  width: 100%;
+  background: #fff;
+  border: 2px solid #ffb347;
+  border-radius: 12px;
+  padding: 14px;
+  margin: 8px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.topic:hover, .option-btn:hover {
+  background: #fff1cc;
+  transform: scale(1.03);
+}
+
+.option-btn.selected {
+  background: linear-gradient(135deg, #ffb347, #ff6f61);
+  color: white;
+  border: none;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(255, 111, 97, 0.3);
+}
+
+/* ===== Result Page ===== */
+#score {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff6f61;
+}
+
+#attempts {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+#attempts li {
+  background: #fff9ec;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 6px 0;
+  border: 1px solid #ffe1a3;
+  color: #444;
+  font-weight: 500;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="topic-title"></h1>
+    <div id="question-container">
+      <h2 id="question-text"></h2>
+      <div id="options"></div>
+      <button id="nextBtn">Next</button>
+    </div>
+  </div>
+
+  <script src="js/quiz.js"></script>
+</body>
+</html>
